@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Бложик Мили!">
+	<main>
+		<h1>🪐 Добро пожаловать в мой <span class="text-gradient">блог</span>!</h1>
+		<p class="about-me">
+			👋 Привет! Я – Эмилия, и тут я выкладываю свои статьи и работы.<br />
+			<strong>Темы:</strong> Литература, история и искусство.
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/blog"
+				title="Все статьи"
+				body="Все мои работы и статьи!"
+			/>
+		</ul>
+		<p class="work">
+			Свежие работы:
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/blog/first-post"
+				title="Чето про терроризм в литературе я не помню"
+				body="Описание твоей работы"
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.about-me {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 2px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.6rem;
+	}
+	.work {
+		font-size: 0.875rem;
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 0.6rem;
+		border-radius: 4px;
+
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

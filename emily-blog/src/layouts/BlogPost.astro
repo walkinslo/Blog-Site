@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Layout from '../layouts/Layout.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<html lang="ru">
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			main {
+				margin: auto;
+				padding: 1.5rem;
+				max-width: 60ch;
+			}
+		</style>
+		
+		
+	</head>
+
+	<body>
+		<main>
+			<article>
+				<slot />
+			</article>
+		</main>
+	</body>
+</html>
