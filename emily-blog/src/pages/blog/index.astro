@@ -1,4 +1,5 @@
 ---
+import HeaderLink from '../../components/HeaderLink.astro';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Card from '../../components/Card.astro';
@@ -14,6 +15,12 @@ const posts = (await getCollection('blog')).sort(
         <p class="about-me">
             Здесь Вы найдете <strong class="text-gradient">все</strong> статьи, что я написала.
         </p>
+		<p role="list">
+			<Card 
+				href="/" 
+				title="Назад!" 
+			/>
+		</p>
 		<ul role="list" class="link-card-grid">
 			{
 				posts.map((post) => (
