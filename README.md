@@ -1,2 +1,2 @@
 # blog-site
-A simple blog site for my gf!
+A simple blog site for my ex gf!
